@@ -20,5 +20,3 @@ This project is actively developed and maintained by:
 * **Developer:** Sakibur Rahman
 * **Email:** [sakiburrahmannnn@gmail.com](mailto:sakiburrahmannnn@gmail.com)
 * **GitHub:** [@SakiburRahmann](https://github.com/SakiburRahmann)
-
-_Follows Modern Git/Software Development Standards._
