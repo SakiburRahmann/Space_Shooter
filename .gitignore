@@ -1,0 +1,18 @@
+# Godot 4 specific ignores
+.godot/
+*.translation
+
+# Imported translations (if you have them)
+*.csv.import
+
+# Editor-specific overrides
+override.cfg
+
+# Exporting
+export_presets.cfg
+*.exe
+*.pck
+
+# OS specific files
+.DS_Store
+Thumbs.db

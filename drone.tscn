@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://drone.gd" id="1"]
+
+[node name="Drone" type="CharacterBody2D"]
+script = ExtResource("1")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 2.5, 4, 1)
+polygon = PackedVector2Array(8, 0, -4, -4, -2, 0, -4, 4)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8, 0, -4, -4, -4, 4)

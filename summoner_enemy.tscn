@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://smnr5566"]
+
+[ext_resource type="Script" path="res://summoner_enemy.gd" id="scr_summoner"]
+[ext_resource type="Script" path="res://procedural_enemy.gd" id="scr_enemy_engine"]
+
+[node name="SummonerEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("scr_summoner")
+
+[node name="ProceduralEnemy" type="Node2D" parent="."]
+script = ExtResource("scr_enemy_engine")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -30, 30, 0, 0, 30, -30, 0)

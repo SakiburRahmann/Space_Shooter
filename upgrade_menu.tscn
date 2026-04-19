@@ -1,0 +1,139 @@
+[gd_scene load_steps=5 format=3 uid="uid://upg123abc"]
+
+[ext_resource type="Script" path="res://upgrade_menu.gd" id="1_upg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.06, 0.06, 0.15, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.9, 1, 0.7)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0.8, 1, 0.25)
+shadow_size = 12
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card_hover"]
+bg_color = Color(0.08, 0.1, 0.25, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 1, 1, 0.45)
+shadow_size = 20
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title_bg"]
+bg_color = Color(0.04, 0.04, 0.1, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 1, 0.6, 0.5)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 1, 0.5, 0.2)
+shadow_size = 14
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+
+[node name="UpgradeMenu" type="CanvasLayer"]
+layer = 10
+process_mode = 2
+script = ExtResource("1_upg")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="TitlePanel" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 60.0
+offset_right = 220.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_title_bg")
+
+[node name="VBoxTitle" type="VBoxContainer" parent="TitlePanel"]
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="TitlePanel/VBoxTitle"]
+theme_override_colors/font_color = Color(0, 1, 0.7, 1)
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+text = "WAVE CLEAR"
+
+[node name="SubTitle" type="Label" parent="TitlePanel/VBoxTitle"]
+theme_override_colors/font_color = Color(0.5, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+text = "Select an upgrade to continue"
+
+[node name="VBox" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -80.0
+offset_right = 480.0
+offset_bottom = 220.0
+theme_override_constants/separation = 30
+
+[node name="Card1" type="Button" parent="VBox"]
+custom_minimum_size = Vector2(290, 260)
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_card")
+theme_override_styles/hover = SubResource("StyleBoxFlat_card_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_card_hover")
+text = "Upgrade 1"
+
+[node name="Card2" type="Button" parent="VBox"]
+custom_minimum_size = Vector2(290, 260)
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_card")
+theme_override_styles/hover = SubResource("StyleBoxFlat_card_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_card_hover")
+text = "Upgrade 2"
+
+[node name="Card3" type="Button" parent="VBox"]
+custom_minimum_size = Vector2(290, 260)
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_card")
+theme_override_styles/hover = SubResource("StyleBoxFlat_card_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_card_hover")
+text = "Upgrade 3"
+
+[connection signal="pressed" from="VBox/Card1" to="." method="_on_card_1_pressed"]
+[connection signal="pressed" from="VBox/Card2" to="." method="_on_card_2_pressed"]
+[connection signal="pressed" from="VBox/Card3" to="." method="_on_card_3_pressed"]

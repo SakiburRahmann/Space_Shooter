@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8m3y1j5k6p2w"]
+
+[ext_resource type="Texture2D" uid="uid://df7a1b2c3d4e5" path="res://assets/flare.png" id="1_flare"]
+
+[sub_resource type="Gradient" id="Gradient_thrust"]
+offsets = PackedFloat32Array(0, 0.2, 0.6, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 1, 1, 1, 0, 0.4, 1, 0.5, 0, 0, 0.5, 0)
+
+[node name="Thruster" type="CPUParticles2D"]
+amount = 40
+lifetime = 0.4
+preprocess = 0.1
+texture = ExtResource("1_flare")
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(-1, 0)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_thrust")
